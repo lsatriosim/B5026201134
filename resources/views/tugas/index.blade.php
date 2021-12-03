@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tugas Membuat CRUD</title>
-</head>
-<body>
+@extends('layout.ceria')
 
-	<h3>Data Tugas Pegawai</h3>
+@section('title', 'DATA TUGAS')
 
-	<a href="/tugas/tambah"> + Tambah Tugas Baru</a>
+@section('judulhalaman', 'Data Tugas')
 
+@section('isikonten')
+
+    <a href="/tugas/tambah" class="btn btn-primary" > + Tambah Tugas Baru</a>
 	<br/>
 	<br/>
 
-	<table border="1">
+	<table class="table table-success table-striped">
 		<tr>
 			<th>IDPegawai</th>
 			<th>Tanggal </th>
@@ -27,14 +25,11 @@
 			<td>{{ $t->NamaTugas}}</td>
 			<td>{{ $t->Status }}</td>
 			<td>
-				<a href="/tugas/edit/{{ $t->ID }}">Edit</a>
+				<a href="/tugas/edit/{{ $t->ID }}" class="btn btn-warning" >Edit</a>
 				|
-				<a href="/tugas/hapus/{{ $t->ID }}">Hapus</a>
+				<a href="/tugas /hapus/{{ $t->ID }}" class="btn btn-danger" >Hapus</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
-
-
-</body>
-</html>
+@endsection

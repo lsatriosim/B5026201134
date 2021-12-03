@@ -1,18 +1,14 @@
-<html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
-<body>
+@extends('layout.ceria')
+@section('title', 'DATA PEGAWAI')
 
-	<h2>www.malasngoding.com</h2>
-	<h3>Data Pegawai</h3>
+@section('judulhalaman', 'Data Pegawai')
+@section('isikonten')
+<a href="/pegawai/tambah" class="btn btn-primary" > + Tambah Pegawai Baru</a>
 
-	<a href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
+<br/>
+<br/>
 
-	<br/>
-	<br/>
-
-	<table border="1">
+	<table class="table table-success table-striped">
 		<tr>
 			<th>Nama</th>
 			<th>Jabatan</th>
@@ -27,14 +23,15 @@
 			<td>{{ $p->pegawai_umur }}</td>
 			<td>{{ $p->pegawai_alamat }}</td>
 			<td>
-				<a href="/pegawai/edit/{{ $p->pegawai_id }}">Edit</a>
+				<a href="/pegawai/edit/{{ $p->pegawai_id }} " class="btn btn-warning">Edit</a>
 				|
-				<a href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>
+				<a href="/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-danger">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
+@endsection
 
-
-</body>
-</html>
+@section('pegawaiactive')
+class='active'
+@endsection
