@@ -4,7 +4,7 @@
     <title>@yield('title')</title>
     @include('include.head')
 </head>
-<body class="container m-4">
+<body class="container-fluid m-4">
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
             <div class="custom-menu">
@@ -23,8 +23,8 @@
       <li @yield('absenactive')>
         <a href="/absen">Absen</a>
       </li>
-      <li>
-        <a href="/tugas">tugas</a>
+      <li @yield('tugasactive')>
+        <a href="/tugas">Tugas</a>
       </li>
       <li>
         <a href="#">Minggu Depan</a>

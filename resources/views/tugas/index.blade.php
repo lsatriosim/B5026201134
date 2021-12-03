@@ -10,7 +10,7 @@
 	<br/>
 	<br/>
 
-	<table class="table table-success table-striped">
+	<table class="table table-success table-striped m-0">
 		<tr>
 			<th>IDPegawai</th>
 			<th>Tanggal </th>
@@ -32,4 +32,8 @@
 		</tr>
 		@endforeach
 	</table>
+@endsection
+
+@section('tugasactive')
+class='active'
 @endsection
