@@ -18,6 +18,7 @@
     <div class="table-responsive-sm">
 	<table class="table table-success table-striped ">
 		<tr>
+            <th>No</th>
 			<th>Nama</th>
 			<th>Jabatan</th>
 			<th>Umur</th>
@@ -26,6 +27,7 @@
 		</tr>
 		@foreach($pegawai as $p)
 		<tr>
+            <td>{{ $loop->iteration }}</td>
 			<td>{{ $p->pegawai_nama }}</td>
 			<td>{{ $p->pegawai_jabatan }}</td>
 			<td>{{ $p->pegawai_umur }}</td>

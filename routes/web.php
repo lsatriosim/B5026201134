@@ -71,6 +71,15 @@ Route::get('/pegawai/cari','PegawaiController@cari');
 
 Route::get('/pegawai/detail/{id}','PegawaiController@view');
 
+Route::get('/absen/detail/{id}','AbsenController@view');
+
+Route::get('/tugas/detail/{id}','TugasController@view');
+
+Route::get('/absen/cari','AbsenController@cari');
+
+Route::get('/tugas/cari','TugasController@cari');
+
+
 
 
 

@@ -15,7 +15,7 @@ class AbsenController extends Controller
         $absen = DB::table('absen')
         ->join('pegawai', 'absen.ID', '=', 'pegawai.pegawai_id')
         ->select('absen.*', 'pegawai.pegawai_nama')
-        ->paginate(3);
+        ->paginate(5);
 
 
     	// mengirim data pegawai ke view index
@@ -78,4 +78,36 @@ public function hapus($id)
 	// alihkan halaman ke halaman pegawai
 	return redirect('/absen');
 }
+
+public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+
+    		// mengambil data dari table pegawai sesuai pencarian data
+		$absen = DB::table('absen')
+        ->join('pegawai', 'absen.ID', '=', 'pegawai.pegawai_id')
+        ->select('absen.*', 'pegawai.pegawai_nama')
+		->where('pegawai_nama','like',"%".$cari."%")
+        ->orWhere('Tanggal','like',"%".$cari."%")
+		->paginate(5);
+
+    		// mengirim data pegawai ke view index
+		return view('absen.index',['absen' => $absen]);
+
+	}
+
+
+public function view($id)
+    {
+        // mengambil data pegawai berdasarkan id yang dipilih
+        $absen = DB::table('absen')
+        ->join('pegawai', 'absen.IDPegawai', '=', 'pegawai.pegawai_id')
+        ->select('absen.*', 'pegawai.pegawai_nama', 'pegawai.pegawai_id')
+        ->where('ID',$id)->get();
+
+        // passing data pegawai yang didapat ke view edit.blade.php
+        return view('absen.detail',['absen' => $absen]);
+
+    }
 }
