@@ -26,10 +26,10 @@
       <li @yield('tugasactive')>
         <a href="/tugas">Tugas</a>
       </li>
-      <li>
-        <a href="#">Minggu Depan</a>
+      <li @yield('bedakactive')>
+        <a href="/bedak">Bedak</a>
       </li>
-      <li>
+      <li >
         <a href="#">Praktikum</a>
       </li>
     </ul>

@@ -79,7 +79,21 @@ Route::get('/absen/cari','AbsenController@cari');
 
 Route::get('/tugas/cari','TugasController@cari');
 
+Route::get('/bedak','BedakController@index');
 
+Route::get('/bedak/tambah','BedakController@tambah');
+
+Route::post('/bedak/store','BedakController@store');
+
+Route::get('/bedak/edit/{id}','BedakController@edit');
+
+Route::post('/bedak/update','BedakController@update');
+
+Route::get('/bedak/hapus/{id}','BedakController@hapus');
+
+Route::get('/bedak/cari','BedakController@cari');
+
+Route::get('/bedak/detail/{id}','BedakController@view');
 
 
 
