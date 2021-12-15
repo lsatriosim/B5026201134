@@ -51,8 +51,11 @@
         <b>:</b>
     </div>
     <div class="col-9">
-        <label for="gaji">{{$k->Gaji}}</label>
+        <label for="gaji">@php
+            echo number_format($k->Gaji,0,',','.')
+        @endphp</label>
     </div>
 </div>
+
     @endforeach
 @endsection

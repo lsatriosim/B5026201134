@@ -31,7 +31,9 @@
 			<td>{{ $k->NIP }}</td>
 			<td>{{ $k->Nama }}</td>
 			<td>{{ $k->Pangkat }}</td>
-			<td>{{ $k->Gaji }}</td>
+			<td>@php
+                echo number_format($k->Gaji,0,',','.')
+            @endphp</td>
 			<td >
                 <a href="/karyawan/detail/{{ $k->NIP}}" class="btn btn-default btn-sm" role="button">View </a>
                 |
