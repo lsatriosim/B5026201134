@@ -29,8 +29,8 @@
       <li @yield('bedakactive')>
         <a href="/bedak">Bedak</a>
       </li>
-      <li >
-        <a href="#">Praktikum</a>
+      <li @yield('karyawanactive')>
+        <a href="/karyawan">Karyawan1</a>
       </li>
     </ul>
 

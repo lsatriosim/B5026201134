@@ -95,6 +95,18 @@ Route::get('/bedak/cari','BedakController@cari');
 
 Route::get('/bedak/detail/{id}','BedakController@view');
 
+Route::get('/karyawan','KaryawanController@index');
 
+Route::get('/karyawan/tambah','KaryawanController@tambah');
 
+Route::post('/karyawan/store','KaryawanController@store');
 
+Route::get('/karyawan/hapus/{id}','KaryawanController@hapus');
+
+Route::get('/karyawan/edit/{id}','KaryawanController@edit');
+
+Route::post('/karyawan/update','KaryawanController@update');
+
+Route::get('/karyawan/cari','KaryawanController@cari');
+
+Route::get('/karyawan/detail/{id}','KaryawanController@view');
